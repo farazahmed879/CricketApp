@@ -4,14 +4,16 @@ using CricketApplicationWebPortal.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CricketApplicationWebPortal.Migrations
 {
     [DbContext(typeof(CricketApplicationWebPortalDbContext))]
-    partial class CricketApplicationWebPortalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201225154918_CreatedTablesPlayer_Batting&BowlingStyle_PlayerRole")]
+    partial class CreatedTablesPlayer_BattingBowlingStyle_PlayerRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

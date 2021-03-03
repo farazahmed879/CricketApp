@@ -11,6 +11,10 @@ namespace CricketApplicationWebPortal.EntityFrameworkCore
     {
         /* Define a DbSet for each entity of the application */
         public DbSet<Team> Teams { get; set; }
+        public DbSet<Player> Players { get; set; }
+        public DbSet<BattingStyle> BattingStyles { get; set; }
+        public DbSet<PlayerRole> PlayerRoles { get; set; }
+        public DbSet<BowlingStyle> BowlingStyles { get; set; }
         public CricketApplicationWebPortalDbContext(DbContextOptions<CricketApplicationWebPortalDbContext> options)
             : base(options)
         {

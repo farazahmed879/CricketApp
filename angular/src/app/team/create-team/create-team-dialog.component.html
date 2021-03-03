@@ -1,0 +1,37 @@
+<form class="form-horizontal" autocomplete="off" #createTeamForm="ngForm" (ngSubmit)="save()">
+  <!-- <abp-modal-header [title]="Create New Team" (onCloseClick)="bsModalRef.hide()"></abp-modal-header> -->
+  <div class="modal-body">
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="teamName">
+        {{ "Name" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input type="text" class="form-control" name="teamName" id="teamName" minlength="2" maxlength="64" required
+          [(ngModel)]="team.name" #teamNameModel="ngModel" #teamNameEl />
+        <abp-validation-summary [control]="teamNameModel" [controlEl]="teamNameEl"></abp-validation-summary>
+      </div>
+    </div>
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="address">
+        {{ "Address" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input type="text" class="form-control" name="address" id="address" minlength="2" maxlength="64" required
+          [(ngModel)]="team.address" #addressModel="ngModel" #addressEl />
+        <abp-validation-summary [control]="addressModel" [controlEl]="addressEl"></abp-validation-summary>
+      </div>
+    </div>
+    <div class="form-group row required">
+      <label class="col-md-3 col-form-label" for="zone">
+        {{ "Zone" | localize }}
+      </label>
+      <div class="col-md-9">
+        <input type="number" class="form-control" name="zone" id="zone" minlength="1" maxlength="64" required
+          [(ngModel)]="team.zone" #zoneModel="ngModel" #zoneEl />
+        <abp-validation-summary [control]="zoneModel" [controlEl]="zoneEl"></abp-validation-summary>
+      </div>
+    </div>
+  </div>
+  <abp-modal-footer [cancelDisabled]="saving" [saveDisabled]="!createTeamForm.form.valid || saving"
+    (onCancelClick)="bsModalRef.hide()"></abp-modal-footer>
+</form>

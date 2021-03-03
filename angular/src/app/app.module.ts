@@ -38,6 +38,11 @@ import { SidebarComponent } from './layout/sidebar.component';
 import { SidebarLogoComponent } from './layout/sidebar-logo.component';
 import { SidebarUserPanelComponent } from './layout/sidebar-user-panel.component';
 import { SidebarMenuComponent } from './layout/sidebar-menu.component';
+//
+import {CreateTeamDialogComponent} from './team/create-team/create-team-dialog.component';
+import {EditTeamDialogComponent} from './team/edit-team/edit-team-dialog.component';
+import {TeamComponent} from './team/team.component';
+import { TeamServiceProxy } from '@shared/service-proxies/service-proxies';
 
 @NgModule({
   declarations: [
@@ -67,7 +72,11 @@ import { SidebarMenuComponent } from './layout/sidebar-menu.component';
     SidebarComponent,
     SidebarLogoComponent,
     SidebarUserPanelComponent,
-    SidebarMenuComponent
+    SidebarMenuComponent,
+    // team
+    CreateTeamDialogComponent,
+    EditTeamDialogComponent,
+    TeamComponent
   ],
   imports: [
     CommonModule,
@@ -84,7 +93,9 @@ import { SidebarMenuComponent } from './layout/sidebar-menu.component';
     SharedModule,
     NgxPaginationModule,
   ],
-  providers: [],
+  providers: [
+    TeamServiceProxy 
+  ],
   entryComponents: [
     // tenants
     CreateTenantDialogComponent,
@@ -96,6 +107,11 @@ import { SidebarMenuComponent } from './layout/sidebar-menu.component';
     CreateUserDialogComponent,
     EditUserDialogComponent,
     ResetPasswordDialogComponent,
+    // team
+    CreateTeamDialogComponent,
+    EditTeamDialogComponent,
+    TeamComponent
+
   ],
 })
 export class AppModule {}
